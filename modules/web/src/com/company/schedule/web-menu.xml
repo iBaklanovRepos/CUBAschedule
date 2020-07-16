@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-schedule" insertBefore="administration">
+        <item screen="schedule_Classroom.browse"/>
+        <item screen="schedule_Group.browse"/>
+        <item screen="schedule_Student.browse"/>
+        <item screen="schedule_Teacher.browse"/>
+        <item screen="schedule_Lesson.browse"/>
+    </menu>
+</menu-config>
