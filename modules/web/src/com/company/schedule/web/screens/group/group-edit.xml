@@ -6,9 +6,16 @@
     <data>
         <instance id="groupDc"
                   class="com.company.schedule.entity.Group"
-                  view="_local">
+                  view="group-view">
             <loader/>
         </instance>
+        <collection id="studentsDc" class="com.company.schedule.entity.Student" view="_local">
+            <loader id="studentsDl">
+                <query>
+                    <![CDATA[select e from schedule_Student e where e.group = :group]]>
+                </query>
+            </loader>
+        </collection>
     </data>
     <dialogMode height="600"
                 width="800"/>
@@ -18,6 +25,14 @@
                 <textField id="numberField" property="number"/>
             </column>
         </form>
+        <groupBox caption="Students" width="320px">
+            <table id="studentsTable" height="200px" width="300px" dataContainer="studentsDc">
+                <columns>
+                    <column id="full_name"/>
+                    <column id="st_book_number"/>
+                </columns>
+            </table>
+        </groupBox>
         <hbox id="editActions" spacing="true">
             <button action="windowCommitAndClose"/>
             <button action="windowClose"/>

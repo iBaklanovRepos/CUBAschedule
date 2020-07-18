@@ -8,11 +8,6 @@
         <collection id="studentsDc"
                     class="com.company.schedule.entity.Student"
                     view="student-view">
-            <loader id="studentsDl">
-                <query>
-                    <![CDATA[select e from schedule_Student e]]>
-                </query>
-            </loader>
         </collection>
     </data>
     <dialogMode height="600"
@@ -20,8 +15,7 @@
     <layout expand="studentsTable"
             spacing="true">
         <filter id="filter"
-                applyTo="studentsTable"
-                dataLoader="studentsDl">
+                applyTo="studentsTable">
             <properties include=".*"/>
         </filter>
         <groupTable id="studentsTable"

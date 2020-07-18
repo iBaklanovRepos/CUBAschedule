@@ -2,11 +2,22 @@
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
 
     <view entity="schedule_Student" name="student-view" extends="_local">
-        <property name="group" view="_minimal"/>
+        <property name="group" view="_minimal">
+            <property name="number"/>
+        </property>
     </view>
     <view entity="schedule_Lesson" name="lesson-view" extends="_local">
-        <property name="classroom" view="_minimal"/>
-        <property name="teacher" view="_minimal"/>
-        <property name="groups" view="_minimal"/>
+        <property name="classroom" view="_minimal">
+            <property name="room_number"/>
+        </property>
+        <property name="teacher" view="_minimal">
+            <property name="full_name"/>
+        </property>
+        <property name="groups" view="_minimal">
+            <property name="number"/>
+        </property>
+    </view>
+    <view entity="schedule_Group" name="group-view" extends="_local">
+        <property name="students" view="_minimal"/>
     </view>
 </views>

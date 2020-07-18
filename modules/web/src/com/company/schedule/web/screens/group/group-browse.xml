@@ -7,7 +7,7 @@
     <data readOnly="true">
         <collection id="groupsDc"
                     class="com.company.schedule.entity.Group"
-                    view="_local">
+                    view="group-view">
             <loader id="groupsDl">
                 <query>
                     <![CDATA[select e from schedule_Group e]]>

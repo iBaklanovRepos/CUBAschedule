@@ -16,12 +16,9 @@
         <form id="form" dataContainer="classroomDc">
             <column width="250px">
                 <textField id="room_numberField" property="room_number"/>
-                <textField id="room_typeField" property="room_type"/>
+                <!--                <textField id="room_typeField" property="room_type"/>-->
+                <lookupField id="room_type_picker" property="room_type" textInputAllowed="false"/>
                 <textField id="capacityField" property="capacity"/>
-                <hbox spacing="true">
-                    <label />
-                    <checkBox/>
-                </hbox>
             </column>
         </form>
         <hbox id="editActions" spacing="true">
