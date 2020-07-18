@@ -9,6 +9,13 @@
                   view="_local">
             <loader/>
         </instance>
+        <collection id="lessonsDc" class="com.company.schedule.entity.Lesson" view="lesson-view">
+            <loader id="lessonsDl">
+                <query>
+                    <![CDATA[select e from schedule_Lesson e where e.teacher = :teacher]]>
+                </query>
+            </loader>
+        </collection>
     </data>
     <dialogMode height="600"
                 width="800"/>
@@ -19,6 +26,16 @@
                 <textField id="emailField" property="email"/>
             </column>
         </form>
+        <groupBox spacing="true" caption="Schedule" width="420px">
+            <table id="lessonsTable" height="100px" width="400px" dataContainer="lessonsDc">
+                <columns>
+                    <column id="date"/>
+                    <column id="time"/>
+                    <column id="classroom"/>
+                    <column id="teacher"/>
+                </columns>
+            </table>
+        </groupBox>
         <hbox id="editActions" spacing="true">
             <button action="windowCommitAndClose"/>
             <button action="windowClose"/>

@@ -16,6 +16,13 @@
                 </query>
             </loader>
         </collection>
+        <collection id="lessonsDc" class="com.company.schedule.entity.Lesson" view="lesson-view">
+            <loader id="lessonsDl">
+                <query>
+                    <![CDATA[select e from schedule_Lesson e where e.groups = :group]]>
+                </query>
+            </loader>
+        </collection>
     </data>
     <dialogMode height="600"
                 width="800"/>
@@ -30,6 +37,16 @@
                 <columns>
                     <column id="full_name"/>
                     <column id="st_book_number"/>
+                </columns>
+            </table>
+        </groupBox>
+        <groupBox spacing="true" width="420px" caption="Schedule">
+            <table id="lessonsTable" height="100px" width="400px" dataContainer="lessonsDc">
+                <columns>
+                    <column id="date"/>
+                    <column id="time"/>
+                    <column id="classroom"/>
+                    <column id="teacher"/>
                 </columns>
             </table>
         </groupBox>

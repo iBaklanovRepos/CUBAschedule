@@ -2,9 +2,7 @@
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
 
     <view entity="schedule_Student" name="student-view" extends="_local">
-        <property name="group" view="_minimal">
-            <property name="number"/>
-        </property>
+        <property name="group" view="_minimal"/>
     </view>
     <view entity="schedule_Lesson" name="lesson-view" extends="_local">
         <property name="classroom" view="_minimal">
@@ -18,6 +16,8 @@
         </property>
     </view>
     <view entity="schedule_Group" name="group-view" extends="_local">
-        <property name="students" view="_minimal"/>
+        <property name="students" view="_minimal">
+            <property name="full_name"/>
+        </property>
     </view>
 </views>
