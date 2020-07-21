@@ -1,11 +1,13 @@
 package com.company.schedule.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+@NamePattern("%s|number")
 @Table(name = "SCHEDULE_GROUP")
 @Entity(name = "schedule_Group")
 public class Group extends StandardEntity {
@@ -17,6 +19,7 @@ public class Group extends StandardEntity {
 
     @OneToMany(mappedBy = "group")
     protected List<Student> students;
+
     @JoinTable(name = "SCHEDULE_LESSON_GROUP_LINK",
             joinColumns = @JoinColumn(name = "GROUP_ID"),
             inverseJoinColumns = @JoinColumn(name = "LESSON_ID"))

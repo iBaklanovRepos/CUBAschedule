@@ -1,10 +1,12 @@
 package com.company.schedule.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+@NamePattern("%s|room_number")
 @Table(name = "SCHEDULE_CLASSROOM")
 @Entity(name = "schedule_Classroom")
 public class Classroom extends StandardEntity {

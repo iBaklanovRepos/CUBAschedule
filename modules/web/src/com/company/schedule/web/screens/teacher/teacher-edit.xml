@@ -27,7 +27,7 @@
             </column>
         </form>
         <groupBox spacing="true" caption="Schedule" width="420px">
-            <table id="lessonsTable" height="100px" width="400px" dataContainer="lessonsDc">
+            <table id="lessonsTable" height="350px" width="400px" dataContainer="lessonsDc">
                 <columns>
                     <column id="date"/>
                     <column id="time"/>

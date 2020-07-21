@@ -1,10 +1,13 @@
 package com.company.schedule.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
+@NamePattern("%s|full_name")
 @Table(name = "SCHEDULE_TEACHER")
 @Entity(name = "schedule_Teacher")
 public class Teacher extends StandardEntity {
@@ -14,6 +17,7 @@ public class Teacher extends StandardEntity {
     @Column(name = "FULL_NAME", nullable = false)
     protected String full_name;
 
+    @Email(message = "Email isn't valid")
     @NotNull
     @Column(name = "EMAIL", nullable = false)
     protected String email;

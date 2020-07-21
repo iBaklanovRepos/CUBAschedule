@@ -1,10 +1,12 @@
 package com.company.schedule.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+@NamePattern("%s|full_name")
 @Table(name = "SCHEDULE_STUDENT")
 @Entity(name = "schedule_Student")
 public class Student extends StandardEntity {
@@ -17,6 +19,7 @@ public class Student extends StandardEntity {
     @NotNull
     @Column(name = "ST_BOOK_NUMBER", nullable = false, unique = true, length = 10)
     protected String st_book_number;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "GROUP_ID")
     protected Group group;
