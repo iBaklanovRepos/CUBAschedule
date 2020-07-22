@@ -1,5 +1,6 @@
 package com.company.schedule.web.screens.lesson;
 
+import com.company.schedule.entity.Classroom;
 import com.company.schedule.entity.Group;
 import com.company.schedule.service.ClassroomOverflowExceptionService;
 import com.company.schedule.service.LessonsCollisionControlService;
@@ -28,6 +29,8 @@ public class LessonEdit extends StandardEditor<Lesson> {
     private ClassroomOverflowExceptionService classroomOverflowExceptionService;
     @Inject
     private Notifications notifications;
+    @Inject
+    private LessonsCollisionControlService lessonsCollisionControlService;
 
     @Subscribe
     public void onBeforeCommitChanges(BeforeCommitChangesEvent event) {
@@ -38,8 +41,6 @@ public class LessonEdit extends StandardEditor<Lesson> {
         }
     }
 
-    @Inject
-    private LessonsCollisionControlService lessonsCollisionControlService;
 //    @Subscribe("groupsTable.add")
 //    public void onGroupsTableAdd(Action.ActionPerformedEvent event) {
 //        Lesson lesson = getEditedEntity();
@@ -47,6 +48,8 @@ public class LessonEdit extends StandardEditor<Lesson> {
 //            String roomOverflowMessage = "The classroom is overflowed. Capacity limit : " + classroomOverflowExceptionService.loadCapacity(lesson);
 //            notifications.create().withCaption(roomOverflowMessage).withType(Notifications.NotificationType.ERROR).show();
 //        } else {
+//            notifications.create().withCaption(String.valueOf()).withType(Notifications.NotificationType.TRAY).show();
+//            groupsTable.getAction("add").actionPerform(getWindow());
 //        }
 //    }
 

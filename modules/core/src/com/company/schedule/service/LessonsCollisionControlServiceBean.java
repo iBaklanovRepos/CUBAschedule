@@ -4,6 +4,7 @@ import com.company.schedule.entity.Classroom;
 import com.company.schedule.entity.Group;
 import com.company.schedule.entity.Lesson;
 import com.company.schedule.entity.Teacher;
+import com.haulmont.bali.datastruct.Tree;
 import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.core.global.LoadContext;
 import com.haulmont.cuba.core.global.View;
@@ -25,8 +26,8 @@ public class LessonsCollisionControlServiceBean implements LessonsCollisionContr
         Date time = lesson.getTime();
         Date endTime = new Date();
         Date startTime = new Date();
-        endTime.setTime(time.getTime() + 2700000);
-        startTime.setTime(time.getTime() - 2700000);
+        endTime.setTime(time.getTime() + 5340000);
+        startTime.setTime(time.getTime() - 5340000);
         Teacher teacher = lesson.getTeacher();
         Classroom classroom = lesson.getClassroom();
         List<Group> groups = lesson.getGroups();

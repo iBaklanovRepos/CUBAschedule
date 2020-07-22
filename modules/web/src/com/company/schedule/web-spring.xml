@@ -17,6 +17,8 @@
                        value="com.company.schedule.service.ClassroomOverflowExceptionService"/>
                 <entry key="schedule_LessonsCollisionControlService"
                        value="com.company.schedule.service.LessonsCollisionControlService"/>
+                <entry key="schedule_AutoScheduleCreateService"
+                       value="com.company.schedule.service.AutoScheduleCreateService"/>
             </map>
         </property>
     </bean>
