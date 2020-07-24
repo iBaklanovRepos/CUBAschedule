@@ -44,7 +44,7 @@
                 <button id="createBtn" action="lessonsTable.create"/>
                 <button id="editBtn" action="lessonsTable.edit"/>
                 <button id="removeBtn" action="lessonsTable.remove"/>
-                <button id="finishScheduleBtn" caption="Finish schedule automatically"/>
+                <button id="finishScheduleBtn" caption="Finish schedule automatically" visible="false"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
